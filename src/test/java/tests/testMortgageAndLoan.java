@@ -47,20 +47,21 @@ public class testMortgageAndLoan implements Helper {
 
     @Test(priority=0)
     public void testMortgageFill() throws InterruptedException{
-        LOG.log(Level.INFO, "Starting test");
+        LOG.log(Level.INFO, "Starting test ... filling first page");
         LoanAndProperty loanpage = new LoanAndProperty(driver).get();
         loanpage.CheckAndFillFields(LOANAMOUNT, INTERESTRATE, LENGTH, HOMEVALUE);
     }
 
     @Test(priority = 1)
     public void testPaymentsFill() throws InterruptedException{
+        LOG.log(Level.INFO, "Filling second page");
         PaymentsAndResults payments = new PaymentsAndResults(driver);
         payments.CheckFieldsAndFill(Helper.ANNUALTAXES, Helper.ANNUALINSURANCE, Helper.PMI);
     }
 
     @Test(priority=2)
     public void testResults() {
-
+        LOG.log(Level.INFO, "Checking results");
         ResultPage results = new ResultPage(driver);
         results.CheckResults();
     }
