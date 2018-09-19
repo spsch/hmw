@@ -6,13 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,7 +24,7 @@ import pages.ResultPage;
 public class testMortgageAndLoan implements Helper {
     //initialize driver
     private WebDriver driver;
-    //initilaize logger
+    //initialize logger
     private Logger LOG = Logger.getLogger(String.valueOf(testMortgageAndLoan.class));
 
     @BeforeTest
@@ -60,13 +58,17 @@ public class testMortgageAndLoan implements Helper {
         payments.CheckFieldsAndFill(Helper.ANNUALTAXES, Helper.ANNUALINSURANCE, Helper.PMI);
     }
 
-    @Test(priority = 2)
-    public void testCheckResults() throws InterruptedException{
-        WebElement ResultTable = driver.findElement(By.tagName("table"));
-        List<WebElement> TableRows = ResultTable.findElements(By.tagName("tr"));
-        for(int i = 0; i<TableRows.size(); i++ ){
-            WebElement row = TableRows.get(i);
-            System.out.println(row);
-        }
+    @Test(priority=2)
+    public void testResults() {
+
+        ResultPage results = new ResultPage(driver);
+        results.CheckResults();
+    }
+
+    @Test(priority=3)
+    public void testBodyResults(){
+        Assert.assertTrue(driver.getPageSource().contains("$1,073.64"));
+        Assert.assertTrue(driver.getPageSource().contains("85.11%"));
+        Assert.assertTrue(driver.getPageSource().contains("$1,482.39"));
     }
 }

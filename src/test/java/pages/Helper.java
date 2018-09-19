@@ -14,12 +14,8 @@ public interface Helper {
     final String ANNUALINSURANCE = "1865";
     final String PMI = "0.52";
 
-    final String MONTHLY_RESULT = "1073.64";
-    final String ANNUAL_RESULT = "85.11";
-    final String PAYMENTS_RESULT = "1482.39";
-
-    final String MONTHLY_RESULT_TEXT = "Monthly Principal & Interests";
-    final String LOANTOVALUERATIO_TEXT = "Loan To Value Ratio";
-    final String TOTAL_MTHLY_PAYMENTS_TEXT = "Total Monthly Payments";
+    final String MONTHLY_RESULT = "$1,073.64";
+    final String ANNUAL_RESULT = "85.11%";
+    final String PAYMENTS_RESULT = "$1,482.39";
 }
 
