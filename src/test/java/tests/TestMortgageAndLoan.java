@@ -1,11 +1,7 @@
 package tests;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -21,11 +17,11 @@ import pages.LoanAndProperty;
 import pages.PaymentsAndResults;
 import pages.ResultPage;
 
-public class testMortgageAndLoan implements Helper {
+public class TestMortgageAndLoan implements Helper {
     //initialize driver
     private WebDriver driver;
     //initialize logger
-    private Logger LOG = Logger.getLogger(String.valueOf(testMortgageAndLoan.class));
+    private Logger LOG = Logger.getLogger(String.valueOf(TestMortgageAndLoan.class));
 
     @BeforeTest
     public void setUp(){
