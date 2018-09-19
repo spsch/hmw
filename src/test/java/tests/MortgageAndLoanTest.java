@@ -1,27 +1,26 @@
 package tests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.Helper;
 import pages.LoanAndProperty;
 import pages.PaymentsAndResults;
 import pages.ResultPage;
 
-public class TestMortgageAndLoan implements Helper {
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class MortgageAndLoanTest implements Helper {
     //initialize driver
     private WebDriver driver;
     //initialize logger
-    private Logger LOG = Logger.getLogger(String.valueOf(TestMortgageAndLoan.class));
+    private Logger LOG = Logger.getLogger(String.valueOf(MortgageAndLoanTest.class));
 
     @BeforeTest
     public void setUp(){

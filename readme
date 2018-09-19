@@ -21,6 +21,6 @@ Total Monthly Payments:	$1,482.39
 
 Your software should do some actual verification of these results, not just print them out when they are found.
 
-You can run this test from maven by "mvn -Dtest=tests.TestMortgageAndLoan test" or from IDE by using TestNG.
+You can run this test from maven by "mvn -Dtest=tests.MortgageAndLoanTest test" or from IDE by using TestNG.
 Report files should be found in target directory.
 
